@@ -15,7 +15,7 @@ document.addEventListener("deviceready", onDeviceReady,
 false);
 }
 function onDeviceReady() {
-navigator.notification.alert("onDeviceReady");
+navigator.notification.alert("listo onDeviceReady");
 }
 function takePhoto() {
 navigator.camera.getPicture(onCameraSuccess,
@@ -24,13 +24,14 @@ onCameraError,
 destinationType : Camera.DestinationType.FILE_URI});
 }
 function onCameraSuccess(imageURL) {
+    navigator.notification.alert("La imagen esta en: " + imageURL);
 //Get a handle to the image container div
 ic = document.getElementById('imageContainer');
 //Then write an image tag out to the div using the
 //URL we received from the camera application.
 ic.innerHTML = '<img src="' + imageURL +
-'" width="50%" />';
-    navigator.notification.alert("La imagen esta en: " + imageURL);
+'" width="100%" />';
+    
 }
 function onCameraError(e) {
 console.log(e);
